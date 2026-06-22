@@ -13,7 +13,7 @@ environ.Env.read_env(BASE_DIR / '.env', overwrite=True)
 
 SECRET_KEY = env('SECRET_KEY', default='django-insecure-dev-key-change-me')
 DEBUG      = env('DEBUG')
-ALLOWED_HOSTS = env('ALLOWED_HOSTS') + ['.railway.app', '.up.railway.app']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS') + ['.railway.app', '.up.railway.app', '.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
@@ -62,5 +62,9 @@ DEFAULT_FROM_EMAIL  = env('EMAIL_HOST_USER', default='noreply@portfolio.dev')
 CONTACT_EMAIL       = env('CONTACT_EMAIL', default=EMAIL_HOST_USER)
 
 # ── SECURITY ─────────────────────────────────────────────
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'https://*.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://*.up.railway.app',
+    'https://*.onrender.com',
+]
 DEFAULT_AUTO_FIELD   = 'django.db.models.BigAutoField'
